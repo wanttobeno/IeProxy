@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "IE代理", "IE代理\IE代理.vcproj", "{DFE4B0FE-0AA4-4454-8E72-DF2553C1FF88}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "IeProxy", "IeProxy\IeProxy.vcproj", "{910D4854-41E3-4891-85B9-6F6425A165B5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DFE4B0FE-0AA4-4454-8E72-DF2553C1FF88}.Debug|Win32.ActiveCfg = Debug|Win32
+		{DFE4B0FE-0AA4-4454-8E72-DF2553C1FF88}.Debug|Win32.Build.0 = Debug|Win32
+		{DFE4B0FE-0AA4-4454-8E72-DF2553C1FF88}.Release|Win32.ActiveCfg = Release|Win32
+		{DFE4B0FE-0AA4-4454-8E72-DF2553C1FF88}.Release|Win32.Build.0 = Release|Win32
+		{910D4854-41E3-4891-85B9-6F6425A165B5}.Debug|Win32.ActiveCfg = Debug|Win32
+		{910D4854-41E3-4891-85B9-6F6425A165B5}.Debug|Win32.Build.0 = Debug|Win32
+		{910D4854-41E3-4891-85B9-6F6425A165B5}.Release|Win32.ActiveCfg = Release|Win32
+		{910D4854-41E3-4891-85B9-6F6425A165B5}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
