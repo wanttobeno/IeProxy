@@ -83,8 +83,10 @@ EXSTYLE WS_EX_APPWINDOW
 CAPTION "IeProxy"
 FONT 9, "MS Shell Dlg", 0, 0, 0x1
 BEGIN
-    PUSHBUTTON      "清除代理",IDC_BTN_CLEAN,120,46,50,14
-    PUSHBUTTON      "设置无效代理",IDC_BTN_SET,50,46,50,14
+    PUSHBUTTON      "清除代理",IDC_BTN_CLEAN,126,63,44,14
+    PUSHBUTTON      "设置代理",IDC_BTN_SET,56,63,44,14
+    EDITTEXT        IDC_EDIT_SERVER,56,26,101,14,ES_AUTOHSCROLL
+    LTEXT           "代理服务器：",IDC_STATIC,10,28,41,8
 END
 
 
@@ -111,12 +113,12 @@ BEGIN
         BLOCK "080403a8"
         BEGIN
             VALUE "FileDescription", "WinProxyTool"
-            VALUE "FileVersion", "1.0.1.2"
+            VALUE "FileVersion", "1.2.0.0"
             VALUE "InternalName", "IeProxy.exe"
             VALUE "LegalCopyright", "https://github.com/wanttobeno/IeProxy"
             VALUE "OriginalFilename", "IeProxy.exe"
             VALUE "ProductName", "IeProxy"
-            VALUE "ProductVersion", "1.0.1.2"
+            VALUE "ProductVersion", "1.2.0.0"
         END
     END
     BLOCK "VarFileInfo"

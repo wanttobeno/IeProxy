@@ -2,6 +2,7 @@
 //
 
 #pragma once
+#include "afxwin.h"
 
 
 // CIeProxyDlg ¶Ô»°¿ò
@@ -30,4 +31,5 @@ protected:
 public:
 	afx_msg void OnBnClickedBtnClean();
 	afx_msg void OnBnClickedBtnSet();
+	CEdit m_edit_server;
 };

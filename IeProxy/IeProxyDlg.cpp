@@ -25,6 +25,7 @@ CIeProxyDlg::CIeProxyDlg(CWnd* pParent /*=NULL*/)
 void CIeProxyDlg::DoDataExchange(CDataExchange* pDX)
 {
 	CDialog::DoDataExchange(pDX);
+	DDX_Control(pDX, IDC_EDIT_SERVER, m_edit_server);
 }
 
 BEGIN_MESSAGE_MAP(CIeProxyDlg, CDialog)
@@ -48,6 +49,7 @@ BOOL CIeProxyDlg::OnInitDialog()
 	SetIcon(m_hIcon, FALSE);		// 设置小图标
 
 	// TODO: 在此添加额外的初始化代码
+	m_edit_server.SetWindowText(_T("127.0.0.1:1080"));
 
 	return TRUE;  // 除非将焦点设置到控件，否则返回 TRUE
 }
@@ -100,10 +102,17 @@ void CIeProxyDlg::OnBnClickedBtnClean()
 void CIeProxyDlg::OnBnClickedBtnSet()
 {
 	// TODO: Add your control notification handler code here
+	CString strServer;
+	m_edit_server.GetWindowText(strServer);
+	if (strServer.IsEmpty())
+	{
+		AfxMessageBox(_T("请填写代理服务器地址"));
+		return;
+	}
 
 	RegProxy regProxy;
-	if (regProxy.SetProxy(1,_T("127.2.3.1:4321")))
+	if (regProxy.SetProxy(1,strServer.GetBuffer()))
 	{
-		AfxMessageBox(_T("设置无效代理成功！"));
+		AfxMessageBox(_T("设置代理成功！"));
 	}
 }
