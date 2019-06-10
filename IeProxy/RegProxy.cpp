@@ -13,10 +13,10 @@ RegProxy::~RegProxy(void)
 }
 
 #define PROXY_REG_ITEM _T("Software\\Microsoft\\Windows\\CurrentVersion\\Internet Settings")
+#define PROXY_REG_CONNECT _T("Software\\Microsoft\\Windows\\CurrentVersion\\Internet Settings\\Connections")
 
 bool RegProxy::IsProxy()
 {
-	BOOL bReturn;
 	INTERNET_PER_CONN_OPTION_LIST    List;
 	INTERNET_PER_CONN_OPTION         Option[1];
 	unsigned long                    nSize = sizeof(INTERNET_PER_CONN_OPTION_LIST);
@@ -94,7 +94,27 @@ bool RegProxy::SetProxy(bool bEnabled,xstring strProxyServer)
 			NULL,  
 			REG_DWORD,  
 			(LPBYTE) & dwenable,  
-			sizeof(dwenable));  
+			sizeof(dwenable)); 
+
+		// Fix Win10 un_Proxy failed
+		//HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Connections
+		HKEY hKeyConnect = NULL;  
+
+		LONG lret = RegOpenKeyEx(HKEY_CURRENT_USER,  
+			PROXY_REG_CONNECT,  
+			NULL,  
+			KEY_WRITE |
+			KEY_SET_VALUE,  
+			&hKeyConnect); 
+		if(hKeyConnect != NULL || lret == ERROR_SUCCESS)  
+		{  
+			DWORD dwValue = 0;
+			lret =RegSetValueEx(hKeyConnect,_T("DefaultConnectionSettings"),NULL,REG_BINARY,(LPBYTE) & dwValue,  
+				sizeof(dwValue));
+			RegSetValueEx(hKeyConnect,_T("SavedLegacySettings"),NULL,REG_BINARY,(LPBYTE) & dwValue,  
+				sizeof(dwValue));
+			RegCloseKey(hKeyConnect);
+		}  
 	}  
 	RegCloseKey(hKey);  
 

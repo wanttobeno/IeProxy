@@ -110,14 +110,13 @@ BEGIN
     BEGIN
         BLOCK "080403a8"
         BEGIN
-            VALUE "CompanyName", "TODO: <公司名>"
-            VALUE "FileDescription", "TODO: <文件说明>"
-            VALUE "FileVersion", "1.0.0.1"
+            VALUE "FileDescription", "WinProxyTool"
+            VALUE "FileVersion", "1.0.1.2"
             VALUE "InternalName", "IeProxy.exe"
-            VALUE "LegalCopyright", "TODO: (C) <公司名>。保留所有权利。"
+            VALUE "LegalCopyright", "https://github.com/wanttobeno/IeProxy"
             VALUE "OriginalFilename", "IeProxy.exe"
-            VALUE "ProductName", "TODO: <产品名>"
-            VALUE "ProductVersion", "1.0.0.1"
+            VALUE "ProductName", "IeProxy"
+            VALUE "ProductVersion", "1.0.1.2"
         END
     END
     BLOCK "VarFileInfo"
